@@ -1,58 +1,349 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📊 DevTracker
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Gestor de tareas empresarial - Planifica, Asigna y Visualiza tu flujo de trabajo**
 
-## About Laravel
+DevTracker es una plataforma web completa para la gestión integral de proyectos y tareas. Diseñada para equipos de trabajo empresarial, permite programar tareas, asignarlas a miembros del equipo, marcar su estado de avance y visualizar el progreso en tiempo real.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🌟 Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 📅 **Programación de Tareas** - Agenda tareas con fechas, horas y prioridades
+- ✅ **Seguimiento de Estado** - Marca tareas como completadas, en progreso o pendientes
+- 👥 **Asignación de Equipo** - Asigna tareas a miembros del equipo específicos
+- 📊 **Dashboard Visual** - Visualiza el estado de todos tus proyectos en tiempo real
+- 🎯 **Gestión de Proyectos** - Organiza tareas por proyectos y sprints
+- 📈 **Reportes y Métricas** - Analiza productividad y avance del equipo
+- 🔔 **Notificaciones** - Recibe alertas sobre cambios en tus tareas
+- 🔐 **Control de Acceso** - Permisos y roles configurables
+- 💬 **Colaboración** - Comenta y colabora en tareas
+- 🎨 **Interfaz Intuitiva** - Diseño moderno y fácil de usar
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Stack Tecnológico
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Backend
+| Tecnología | Descripción |
+|-----------|------------|
+| **Laravel** | Framework PHP moderno y robusto |
+| **PHP** | Lenguaje de servidor |
+| **MySQL/PostgreSQL** | Base de datos relacional |
+| **API REST** | Endpoints para integración |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Frontend
+| Tecnología | Descripción |
+|-----------|------------|
+| **React** | Librería UI moderna |
+| **Inertia.js** | Conecta React con Laravel |
+| **Tailwind CSS** | Estilos y diseño responsivo |
+| **Vite** | Bundler y dev server rápido |
 
-## Agentic Development
+### Complementos
+- **Headless UI** - Componentes accesibles
+- **Drag & Drop** - Interfaz intuitiva (@hello-pangea/dnd)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
+
+## 📋 Requisitos Previos
+
+- PHP >= 8.1
+- Composer
+- Node.js >= 18.x
+- npm o yarn
+- Base de datos (MySQL o PostgreSQL)
+
+---
+
+## 🚀 Instalación
+
+### 1. Clonar el repositorio
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/DiegoOsorioDEV/DevTracker.git
+cd DevTracker
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Configurar Backend (Laravel)
 
-## Contributing
+```bash
+# Instalar dependencias PHP
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Copiar archivo de configuración
+cp .env.example .env
 
-## Code of Conduct
+# Generar clave de aplicación
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Ejecutar migraciones
+php artisan migrate
 
-## Security Vulnerabilities
+# Crear enlace de almacenamiento (si es necesario)
+php artisan storage:link
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 3. Configurar Frontend (React)
 
-## License
+```bash
+# Instalar dependencias Node
+npm install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Compilar assets
+npm run dev
+```
+
+### 4. Variables de Entorno
+
+Configura el archivo `.env`:
+
+```env
+APP_NAME=DevTracker
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=devtracker
+DB_USERNAME=root
+DB_PASSWORD=
+
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+---
+
+## 💻 Scripts Disponibles
+
+### Backend
+```bash
+# Servidor de desarrollo
+php artisan serve
+
+# Ejecutar migraciones
+php artisan migrate
+
+# Crear datos de prueba
+php artisan db:seed
+
+# Ejecutar tests
+php artisan test
+
+# Caché de configuración
+php artisan config:cache
+```
+
+### Frontend
+```bash
+# Servidor de desarrollo
+npm run dev
+
+# Build para producción
+npm run build
+
+# Preview de producción
+npm run preview
+```
+
+---
+
+## 📚 Funcionalidades Principales
+
+### Gestión de Tareas
+- ✅ Crear, editar y eliminar tareas
+- 📅 Establecer fechas de inicio y vencimiento
+- 🏷️ Asignar prioridades (Baja, Media, Alta, Crítica)
+- 👤 Asignar a miembros del equipo
+- 📝 Agregar descripción y comentarios
+
+### Estados de Tareas
+- **Pendiente** - Tarea no iniciada
+- **En Progreso** - Tarea en curso
+- **Completada** - Tarea finalizada
+- **En Revisión** - Esperando aprobación
+- **Bloqueada** - Tarea impedida
+
+### Visualización
+- 📋 Vista de Lista
+- 📊 Vista de Tablero (Kanban)
+- 📅 Vista de Calendario
+- 📈 Gráficos de Progreso
+
+### Colaboración
+- 💬 Comentarios en tareas
+- 👥 Mención de compañeros
+- 📎 Adjuntar archivos
+- 🔔 Notificaciones en tiempo real
+
+---
+
+## 🏗️ Estructura del Proyecto
+
+```
+DevTracker/
+├── app/                      # Código PHP/Laravel
+│   ├── Http/Controllers/     # Controladores
+│   ├── Models/              # Modelos Eloquent
+│   ├── Resources/           # API Resources
+│   └── Requests/            # Form Requests
+├── resources/               # Recursos frontend
+│   ├── js/                  # Componentes React
+│   ├── css/                 # Estilos
+│   └── views/               # Vistas blade
+├── database/                # Migraciones y seeders
+│   ├── migrations/
+│   └── seeders/
+├── routes/                  # Rutas de la aplicación
+│   ├── web.php             # Rutas web
+│   └── api.php             # Rutas API
+├── public/                  # Archivos públicos
+├── vite.config.js          # Configuración Vite
+├── tailwind.config.js      # Configuración Tailwind
+└── package.json            # Dependencias Node
+```
+
+---
+
+## 🧪 Testing
+
+```bash
+# Ejecutar todos los tests
+php artisan test
+
+# Tests específicos
+php artisan test --filter=TaskTest
+
+# Coverage de tests
+php artisan test --coverage
+```
+
+---
+
+## 📖 API Endpoints
+
+### Tareas
+- `GET /api/tasks` - Listar tareas
+- `POST /api/tasks` - Crear tarea
+- `GET /api/tasks/:id` - Obtener tarea
+- `PUT /api/tasks/:id` - Actualizar tarea
+- `DELETE /api/tasks/:id` - Eliminar tarea
+- `PATCH /api/tasks/:id/status` - Cambiar estado
+
+### Proyectos
+- `GET /api/projects` - Listar proyectos
+- `POST /api/projects` - Crear proyecto
+- `GET /api/projects/:id` - Obtener proyecto
+- `PUT /api/projects/:id` - Actualizar proyecto
+
+### Usuarios
+- `GET /api/users` - Listar usuarios
+- `GET /api/users/:id` - Obtener usuario
+- `PUT /api/users/:id` - Actualizar usuario
+
+### Reportes
+- `GET /api/reports/dashboard` - Dashboard general
+- `GET /api/reports/progress` - Progreso de tareas
+- `GET /api/reports/team-metrics` - Métricas del equipo
+
+---
+
+## 🔒 Seguridad
+
+- Autenticación Laravel Sanctum
+- CSRF protection
+- SQL Injection prevention
+- XSS protection
+- Rate limiting
+- Validación de entrada
+
+---
+
+## 🎨 Características UI/UX
+
+- **Responsive Design** - Funciona en desktop, tablet y móvil
+- **Drag & Drop** - Mueve tareas entre estados fácilmente
+- **Componentes Reutilizables** - Código limpio y mantenible
+- **Tema Personalizable** - Adapta colores a tu marca
+- **Accesibilidad** - Cumple estándares WCAG
+
+---
+
+## 📦 Dependencias Principales
+
+### Backend
+```
+laravel/framework
+laravel/sanctum
+laravel/tinker
+laravel/pint
+```
+
+### Frontend
+```
+react@18.2.0
+@inertiajs/react
+tailwindcss
+vite
+@hello-pangea/dnd
+```
+
+---
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+---
+
+## 👨‍💻 Autor
+
+**Diego Osorio**
+- GitHub: [@DiegoOsorioDEV](https://github.com/DiegoOsorioDEV)
+
+---
+
+## 🙏 Agradecimientos
+
+- [Laravel](https://laravel.com/) - Framework excepcional
+- [React](https://react.dev/) - Librería UI moderna
+- [Tailwind CSS](https://tailwindcss.com/) - Estilos eficientes
+- [Inertia.js](https://inertiajs.com/) - Conectando backends y frontends
+
+---
+
+## 💡 Roadmap Futuro
+
+- [ ] Integración con Google Calendar
+- [ ] Exportar reportes (PDF, Excel)
+- [ ] Aplicación móvil nativa
+- [ ] Integraciones con Slack/Teams
+- [ ] Time tracking automático
+- [ ] Análisis de productividad IA
+- [ ] Automatización de workflows
+- [ ] Sistema de webhooks
+
+---
+
+## 📞 Soporte
+
+Si tienes preguntas o encuentras problemas:
+- Abre un [issue](https://github.com/DiegoOsorioDEV/DevTracker/issues)
+- Contacta directamente al desarrollador
+
+---
+
+**⭐ Si este proyecto te fue útil, por favor considera darle una estrella en GitHub!**
